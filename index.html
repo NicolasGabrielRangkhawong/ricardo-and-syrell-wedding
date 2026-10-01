@@ -495,18 +495,8 @@
 								</div>
 							</div>
 
-							<!-- Number of Guests (shown only if attending Yes) -->
-							<div class="form-group" id="guests-group" style="margin-bottom:18px; display:none;">
-								<label for="rsvp-guests" style="color:#fff; font-weight:600; font-size:15px; display:block; margin-bottom:6px;">Number of guests (including yourself)</label>
-								<select class="form-control" id="rsvp-guests" name="guests" style="height:46px;">
-									<option value="1">Just me (1)</option>
-									<option value="2">2 guests</option>
-									<option value="3">3 guests</option>
-									<option value="4">4 guests</option>
-									<option value="5">5+ guests</option>
-									<option value="0" id="opt-guests-0" style="display:none;">0</option>
-								</select>
-							</div>
+							<!-- Hidden individual guest count (1 for Yes, 0 for No) -->
+							<input type="hidden" id="rsvp-guests" name="guests" value="1">
 
 							<!-- Message / Dietary Notes -->
 							<div class="form-group" style="margin-bottom:20px;">
@@ -647,36 +637,31 @@
 		var successBox = document.getElementById("rsvp-success");
 		var successMsg = document.getElementById("rsvp-success-msg");
 		var errorBox   = document.getElementById("rsvp-error");
-		var guestsGrp  = document.getElementById("guests-group");
-		var guestsSel  = document.getElementById("rsvp-guests");
+		var guestsInp  = document.getElementById("rsvp-guests");
 		var btnYes     = document.getElementById("btn-attending-yes");
 		var btnNo      = document.getElementById("btn-attending-no");
 		var contactInp = document.getElementById("rsvp-contact");
 		var emailMirror = document.getElementById("rsvp-email-mirror");
 
-		// Show/hide guest count and highlight active card
+		// Highlight active attendance card
 		document.querySelectorAll('input[name="attending"]').forEach(function (radio) {
 			radio.addEventListener("change", function () {
 				if (this.value === "Yes") {
 					btnYes.classList.add("selected-yes");
 					btnNo.classList.remove("selected-no");
-					guestsGrp.style.display = "block";
-					if (guestsSel.value === "0") {
-						guestsSel.value = "1";
-					}
+					if (guestsInp) guestsInp.value = "1";
 				} else {
 					btnNo.classList.add("selected-no");
 					btnYes.classList.remove("selected-yes");
-					guestsGrp.style.display = "none";
-					guestsSel.value = "0";
+					if (guestsInp) guestsInp.value = "0";
 				}
 			});
 		});
 
 		form.addEventListener("submit", function () {
 			var attending = document.querySelector('input[name="attending"]:checked');
-			if (attending && attending.value === "No") {
-				guestsSel.value = "0";
+			if (guestsInp) {
+				guestsInp.value = (attending && attending.value === "Yes") ? "1" : "0";
 			}
 
 			// Mirror contact number to email input for backwards compatibility
@@ -705,7 +690,6 @@
 				form.reset();
 				btnYes.classList.remove("selected-yes");
 				btnNo.classList.remove("selected-no");
-				guestsGrp.style.display = "none";
 			}, 1500);
 		});
 	});
