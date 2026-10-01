@@ -22,27 +22,40 @@ var SHEET_NAME = "RSVPs";                      // Tab name inside your spreadshe
  * Also useful for testing: open the Web App URL in a browser.
  */
 function doGet(e) {
+  // If RSVP parameters are present, save the submission
+  if (e.parameter && e.parameter.name) {
+    return saveRSVP(e.parameter);
+  }
+  // Otherwise return a status check
   return ContentService
     .createTextOutput(JSON.stringify({ status: "ok", message: "Wedding RSVP backend is live! 🎉" }))
     .setMimeType(ContentService.MimeType.JSON);
 }
 
 /**
- * Handle RSVP form submission (POST request from the wedding website).
+ * Handle RSVP form submission (POST fallback).
  */
 function doPost(e) {
-  try {
-    // Parse incoming JSON payload
-    var data = JSON.parse(e.postData.contents);
+  var params = (e.parameter && e.parameter.name) ? e.parameter : null;
+  if (!params) {
+    try { params = JSON.parse(e.postData.contents); } catch(err) {}
+  }
+  return saveRSVP(params || {});
+}
 
-    var name      = (data.name      || "").trim();
-    var email     = (data.email     || "").trim();
-    var attending = (data.attending || "").trim();
-    var guests    = (data.guests    || "0").trim();
-    var message   = (data.message   || "").trim();
+/**
+ * Save an RSVP to the Google Sheet.
+ */
+function saveRSVP(data) {
+  try {
+    var name      = (data.name                            || "").trim();
+    var contact   = (data.contact || data.phone || data.email || "").trim();
+    var attending = (data.attending                       || "").trim();
+    var guests    = (data.guests                          || "0").trim();
+    var message   = (data.message                         || "").trim();
 
     // Basic validation
-    if (!name || !email || !attending) {
+    if (!name || !contact || !attending) {
       return respond(400, "Missing required fields.");
     }
 
@@ -59,7 +72,7 @@ function doPost(e) {
       sheet.appendRow([
         "Timestamp",
         "Name",
-        "Email",
+        "Contact Number",
         "Attending",
         "# Guests",
         "Message / Notes"
@@ -75,7 +88,7 @@ function doPost(e) {
       // Set column widths
       sheet.setColumnWidth(1, 180); // Timestamp
       sheet.setColumnWidth(2, 180); // Name
-      sheet.setColumnWidth(3, 220); // Email
+      sheet.setColumnWidth(3, 200); // Contact Number
       sheet.setColumnWidth(4, 100); // Attending
       sheet.setColumnWidth(5, 80);  // Guests
       sheet.setColumnWidth(6, 300); // Message
@@ -88,7 +101,7 @@ function doPost(e) {
       "yyyy-MM-dd HH:mm:ss"
     );
 
-    sheet.appendRow([timestamp, name, email, attending, guests, message]);
+    sheet.appendRow([timestamp, name, contact, attending, guests, message]);
 
     // Color-code the new row based on attendance
     var newRow   = sheet.getLastRow();

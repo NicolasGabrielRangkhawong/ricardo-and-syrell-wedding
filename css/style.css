@@ -2108,5 +2108,347 @@ form label {
   }
 }
 
+/* ==========================================================
+   1-PAGE ARCHITECTURE, VIDEO, COVERFLOW & ENTOURAGE STYLES
+   ========================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section scroll offset to account for fixed/sticky navbar */
+[id^="fh5co-"] {
+  scroll-margin-top: 50px;
+}
+
+/* Navbar RSVP CTA Button */
+.fh5co-nav .menu-1 ul li a.nav-rsvp-btn {
+  background: #F14E95;
+  color: #fff !important;
+  padding: 8px 18px !important;
+  border-radius: 20px;
+  margin-left: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.fh5co-nav .menu-1 ul li a.nav-rsvp-btn:hover {
+  background: #d9337b;
+  box-shadow: 0 4px 12px rgba(241, 78, 149, 0.4);
+}
+
+/* Enlarge Couple Section Typography */
+.couple-name-title {
+  font-family: "Sacramento", Arial, serif;
+  font-size: 58px !important;
+  color: #F14E95;
+  margin-top: 15px !important;
+  margin-bottom: 5px !important;
+  line-height: 1.2;
+}
+.couple-role-badge {
+  display: inline-block;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #888;
+  font-weight: 600;
+  background: rgba(241, 78, 149, 0.08);
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+/* Streamlined Event Cards (Date, Time, Venue Focused) */
+.event-card-modern {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 35px 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+  text-align: center;
+  border-top: 4px solid #F14E95;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.event-card-modern:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+}
+.event-card-title {
+  font-family: "Sacramento", cursive;
+  font-size: 44px;
+  color: #F14E95;
+  margin-bottom: 20px;
+}
+.event-info-block {
+  margin: 18px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.event-info-block i {
+  font-size: 26px;
+  color: #F14E95;
+}
+.event-info-main {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  display: block;
+}
+.event-info-sub {
+  font-size: 15px;
+  color: #666;
+  display: block;
+  margin-top: 2px;
+}
+.event-venue-box {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px dashed #ddd;
+}
+.event-venue-name {
+  font-size: 19px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 4px;
+}
+.event-venue-addr {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 12px;
+}
+.btn-map-link {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #F14E95;
+  border: 1.5px solid #F14E95;
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+.btn-map-link:hover {
+  background: #F14E95;
+  color: #fff;
+}
+
+/* Video Section (Replaces Story) */
+#fh5co-video-section {
+  padding: 7em 0;
+  background: #fdfafb;
+}
+@media (max-width: 768px) {
+  #fh5co-video-section {
+    padding: 3.5em 0;
+  }
+}
+.video-responsive-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  background: #000;
+  border: 4px solid #fff;
+}
+.video-responsive-wrapper iframe,
+.video-responsive-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* 3D CoverFlow Photo Carousel (Matching Reference Picture) */
+#fh5co-gallery {
+  padding: 7em 0;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  #fh5co-gallery {
+    padding: 3.5em 0;
+  }
+}
+.swiper-coverflow-container {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  position: relative;
+}
+.swiper-gallery {
+  width: 100%;
+  padding: 30px 0 50px 0;
+}
+.swiper-gallery .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 320px;
+  background: #ffffff;
+  padding: 14px 14px 28px 14px;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+@media (max-width: 480px) {
+  .swiper-gallery .swiper-slide {
+    width: 260px;
+    padding: 10px 10px 20px 10px;
+  }
+}
+.swiper-gallery .swiper-slide-img-wrap {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+@media (max-width: 480px) {
+  .swiper-gallery .swiper-slide-img-wrap {
+    height: 220px;
+  }
+}
+.swiper-gallery .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.swiper-gallery .swiper-slide:hover img {
+  transform: scale(1.04);
+}
+.swiper-gallery .swiper-slide-caption {
+  font-family: "Sacramento", cursive;
+  font-size: 26px;
+  color: #555;
+  margin-top: 12px;
+  margin-bottom: 0;
+  text-align: center;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #F14E95 !important;
+  background: rgba(255, 255, 255, 0.85);
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px !important;
+  font-weight: bold;
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #F14E95;
+  color: #fff !important;
+}
+.swiper-pagination-bullet-active {
+  background: #F14E95 !important;
+}
+
+/* Entourage Section (2-Page / Tabbed Showcase) */
+#fh5co-entourage {
+  padding: 7em 0;
+  background: #fff;
+}
+@media (max-width: 768px) {
+  #fh5co-entourage {
+    padding: 3.5em 0;
+  }
+}
+.entourage-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.entourage-tab-btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 2px solid #F14E95;
+  background: #fff;
+  color: #F14E95;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.entourage-tab-btn.active,
+.entourage-tab-btn:hover {
+  background: #F14E95;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(241, 78, 149, 0.35);
+}
+.entourage-panel {
+  display: none;
+}
+.entourage-panel.active {
+  display: block;
+}
+.entourage-group-box {
+  background: #fdfafb;
+  border-radius: 12px;
+  padding: 26px 20px;
+  margin-bottom: 24px;
+  border-left: 3px solid #F14E95;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+.entourage-group-title {
+  font-family: "Sacramento", cursive;
+  font-size: 34px;
+  color: #F14E95;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+.entourage-pair {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #444;
+}
+.entourage-pair strong {
+  color: #111;
+  font-weight: 600;
+}
+
+/* Minimal Romantic Footer */
+.wedding-simple-footer {
+  padding: 50px 0 40px 0;
+  background: #1a1a1a;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+.wedding-simple-footer h3 {
+  font-family: "Sacramento", cursive;
+  color: #fff;
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+.wedding-simple-footer p {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.wedding-simple-footer .hashtag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 18px;
+  background: rgba(241, 78, 149, 0.2);
+  color: #f4a7b9;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
 /*# sourceMappingURL=style.css.map */
 
