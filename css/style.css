@@ -2457,7 +2457,8 @@ html {
 .event-details-wrap {
   display: flex;
   justify-content: center;
-  margin: 6px 0 22px 0;
+  align-items: center;
+  margin: 6px auto 22px auto;
   width: 100%;
 }
 .event-info-list {
@@ -2465,8 +2466,9 @@ html {
   flex-direction: column;
   gap: 16px;
   text-align: left;
-  width: 100%;
-  max-width: 310px;
+  margin: 0 auto;
+  width: auto;
+  max-width: 100%;
 }
 .event-info-item {
   display: flex;
@@ -2556,11 +2558,9 @@ html {
   color: #333;
   margin-bottom: 4px;
   transition: color 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  flex-wrap: wrap;
+  text-align: center;
+  line-height: 1.35;
+  display: block;
 }
 .event-venue-addr {
   font-size: 13.5px;
@@ -3402,16 +3402,31 @@ html {
 
 @media (max-width: 768px) {
   #fh5co-event .event-card-modern {
-    padding: 28px 18px !important;
+    padding: 28px 20px !important;
     max-width: 360px !important;
     margin: 0 auto 24px auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
   #fh5co-event .event-card-title {
     font-size: 38px !important;
     margin-bottom: 14px !important;
+    text-align: center !important;
+  }
+  #fh5co-event .event-details-wrap {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 6px auto 20px auto !important;
   }
   #fh5co-event .event-info-list {
-    max-width: 290px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    display: inline-flex !important;
+    flex-direction: column !important;
     gap: 14px !important;
   }
   #fh5co-event .event-info-main {
