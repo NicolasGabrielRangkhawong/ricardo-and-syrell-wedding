@@ -47,13 +47,13 @@ body {
 }
 
 a {
-  color: #F14E95;
+  color: #B96D7D;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:active, a:focus {
-  color: #F14E95;
+  color: #B96D7D;
   outline: none;
   text-decoration: none;
 }
@@ -71,17 +71,17 @@ h1, h2, h3, h4, h5, h6, figure {
 
 ::-webkit-selection {
   color: #fff;
-  background: #F14E95;
+  background: #B96D7D;
 }
 
 ::-moz-selection {
   color: #fff;
-  background: #F14E95;
+  background: #B96D7D;
 }
 
 ::selection {
   color: #fff;
-  background: #F14E95;
+  background: #B96D7D;
 }
 
 .fh5co-nav {
@@ -196,7 +196,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #fff;
 }
 .fh5co-nav ul li.btn-cta a {
-  color: #F14E95;
+  color: #B96D7D;
 }
 .fh5co-nav ul li.btn-cta a span {
   background: #fff;
@@ -768,7 +768,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: inline-block;
   zoom: 1;
   *display: inline;
-  color: #F14E95;
+  color: #B96D7D;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -787,7 +787,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
 }
 .fh5co-contact-info ul li:before {
-  color: #F14E95;
+  color: #B96D7D;
   position: absolute;
   left: 0;
   top: .05em;
@@ -879,7 +879,7 @@ form label {
 .fh5co-cover .display-tc .btn {
   padding: 15px 20px;
   background: #fff !important;
-  color: #F14E95;
+  color: #B96D7D;
   border: none !important;
   font-size: 14px;
   text-transform: uppercase;
@@ -942,7 +942,7 @@ form label {
   display: inline-block;
   width: 100px;
   height: 100px;
-  background: rgba(241, 78, 149, 0.8);
+  background: rgba(185, 109, 125, 0.8);
   margin: 0 4px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1043,7 +1043,7 @@ form label {
   font-size: 20px;
   background: #fff;
   padding: 20px;
-  color: #F14E95;
+  color: #B96D7D;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -1066,7 +1066,7 @@ form label {
 }
 .couple-half h3 {
   font-family: "Sacramento", Arial, serif;
-  color: #F14E95;
+  color: #B96D7D;
   font-size: 30px;
 }
 .couple-half .groom, .couple-half .bride {
@@ -1159,7 +1159,7 @@ form label {
   height: 90px;
   font-size: 40px;
   line-height: 40px;
-  color: #F14E95;
+  color: #B96D7D;
 }
 .feature-center p, .feature-center h3 {
   margin-bottom: 30px;
@@ -1181,7 +1181,7 @@ form label {
   margin-bottom: 10px;
   line-height: 1.5;
   font-weight: bold;
-  color: #F14E95;
+  color: #B96D7D;
   font-family: "Sacramento", Arial, serif;
 }
 @media screen and (max-width: 768px) {
@@ -1216,7 +1216,7 @@ form label {
   display: block;
 }
 #fh5co-testimonial .wrap-testimony .testimony-slide span a.twitter {
-  color: #F14E95;
+  color: #B96D7D;
   font-weight: 300;
 }
 #fh5co-testimonial .wrap-testimony .testimony-slide figure {
@@ -1308,7 +1308,7 @@ form label {
   display: table-cell;
   vertical-align: middle;
   font-size: 30px;
-  color: #F14E95;
+  color: #B96D7D;
 }
 .feature-left .feature-copy {
   float: left;
@@ -1374,7 +1374,7 @@ form label {
 #fh5co-started .btn {
   height: 54px;
   border: none !important;
-  background: #F14E95;
+  background: #B96D7D;
   color: #fff;
   font-size: 16px;
   text-transform: uppercase;
@@ -1418,7 +1418,7 @@ form label {
 }
 .owl-carousel .owl-controls .owl-dot.active span {
   background: transparent;
-  border: 2px solid #F14E95;
+  border: 2px solid #B96D7D;
 }
 
 #fh5co-offcanvas {
@@ -1671,9 +1671,9 @@ form label {
 }
 
 .btn-primary {
-  background: #F14E95;
+  background: #B96D7D;
   color: #fff;
-  border: 2px solid #F14E95;
+  border: 2px solid #B96D7D;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background: #f366a3 !important;
@@ -1681,11 +1681,11 @@ form label {
 }
 .btn-primary.btn-outline {
   background: transparent;
-  color: #F14E95;
-  border: 2px solid #F14E95;
+  color: #B96D7D;
+  border: 2px solid #B96D7D;
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-  background: #F14E95;
+  background: #B96D7D;
   color: #fff;
 }
 
@@ -1815,7 +1815,7 @@ form label {
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #F14E95;
+  border-color: #B96D7D;
 }
 
 .row-pb-md {
@@ -2052,8 +2052,8 @@ form label {
 
 #fh5co-started .form-control:focus {
   background: rgba(255, 255, 255, 0.25) !important;
-  border-color: #F14E95 !important;
-  box-shadow: 0 0 10px rgba(241, 78, 149, 0.5) !important;
+  border-color: #B96D7D !important;
+  box-shadow: 0 0 10px rgba(185, 109, 125, 0.5) !important;
 }
 
 #rsvp-guests option {
@@ -2071,20 +2071,20 @@ form label {
   width: 100%;
   max-width: 320px;
   height: 52px;
-  background: #F14E95 !important;
+  background: #B96D7D !important;
   color: #fff !important;
   font-size: 17px !important;
   font-weight: 600 !important;
   letter-spacing: 0.5px;
   border-radius: 30px !important;
   border: none !important;
-  box-shadow: 0 8px 20px rgba(241, 78, 149, 0.4);
+  box-shadow: 0 8px 20px rgba(185, 109, 125, 0.4);
   transition: all 0.3s ease;
 }
 
 #rsvp-submit-btn:hover, #rsvp-submit-btn:focus {
   background: #d9337b !important;
-  box-shadow: 0 10px 25px rgba(241, 78, 149, 0.6);
+  box-shadow: 0 10px 25px rgba(185, 109, 125, 0.6);
   transform: translateY(-2px);
 }
 
@@ -2123,7 +2123,7 @@ html {
 
 /* Navbar RSVP CTA Button */
 .fh5co-nav .menu-1 ul li a.nav-rsvp-btn {
-  background: #F14E95;
+  background: #B96D7D;
   color: #fff !important;
   padding: 8px 18px !important;
   border-radius: 20px;
@@ -2133,14 +2133,14 @@ html {
 }
 .fh5co-nav .menu-1 ul li a.nav-rsvp-btn:hover {
   background: #d9337b;
-  box-shadow: 0 4px 12px rgba(241, 78, 149, 0.4);
+  box-shadow: 0 4px 12px rgba(185, 109, 125, 0.4);
 }
 
 /* Enlarge Couple Section Typography */
 .couple-name-title {
   font-family: "Sacramento", Arial, serif;
   font-size: 58px !important;
-  color: #F14E95;
+  color: #B96D7D;
   margin-top: 15px !important;
   margin-bottom: 5px !important;
   line-height: 1.2;
@@ -2152,7 +2152,7 @@ html {
   letter-spacing: 3px;
   color: #888;
   font-weight: 600;
-  background: rgba(241, 78, 149, 0.08);
+  background: rgba(185, 109, 125, 0.08);
   padding: 4px 14px;
   border-radius: 20px;
 }
@@ -2165,7 +2165,7 @@ html {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   margin-bottom: 30px;
   text-align: center;
-  border-top: 4px solid #F14E95;
+  border-top: 4px solid #B96D7D;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .event-card-modern:hover {
@@ -2175,7 +2175,7 @@ html {
 .event-card-title {
   font-family: "Sacramento", cursive;
   font-size: 44px;
-  color: #F14E95;
+  color: #B96D7D;
   margin-bottom: 20px;
 }
 .event-info-block {
@@ -2187,7 +2187,7 @@ html {
 }
 .event-info-block i {
   font-size: 26px;
-  color: #F14E95;
+  color: #B96D7D;
 }
 .event-info-main {
   font-size: 22px;
@@ -2223,14 +2223,14 @@ html {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
-  color: #F14E95;
-  border: 1.5px solid #F14E95;
+  color: #B96D7D;
+  border: 1.5px solid #B96D7D;
   padding: 6px 16px;
   border-radius: 20px;
   transition: all 0.3s ease;
 }
 .btn-map-link:hover {
-  background: #F14E95;
+  background: #B96D7D;
   color: #fff;
 }
 
@@ -2351,14 +2351,14 @@ html {
 }
 .swiper-slide:hover .gallery-zoom-badge,
 .swiper-slide-active .gallery-zoom-badge {
-  background: rgba(241, 78, 149, 0.9);
+  background: rgba(185, 109, 125, 0.9);
   color: #fff;
   transform: translateY(-2px);
 }
 .gallery-zoom-badge:hover {
-  background: #F14E95 !important;
+  background: #B96D7D !important;
   color: #fff !important;
-  box-shadow: 0 6px 16px rgba(241, 78, 149, 0.45);
+  box-shadow: 0 6px 16px rgba(185, 109, 125, 0.45);
 }
 .swiper-gallery .swiper-slide-caption {
   font-family: "Sacramento", cursive;
@@ -2370,7 +2370,7 @@ html {
 }
 .swiper-button-next,
 .swiper-button-prev {
-  color: #F14E95 !important;
+  color: #B96D7D !important;
   background: rgba(255, 255, 255, 0.85);
   width: 48px !important;
   height: 48px !important;
@@ -2385,11 +2385,11 @@ html {
 }
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background: #F14E95;
+  background: #B96D7D;
   color: #fff !important;
 }
 .swiper-pagination-bullet-active {
-  background: #F14E95 !important;
+  background: #B96D7D !important;
 }
 
 /* Entourage Section (2-Page / Tabbed Showcase) */
@@ -2412,9 +2412,9 @@ html {
 .entourage-tab-btn {
   padding: 12px 28px;
   border-radius: 30px;
-  border: 2px solid #F14E95;
+  border: 2px solid #B96D7D;
   background: #fff;
-  color: #F14E95;
+  color: #B96D7D;
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
@@ -2422,9 +2422,9 @@ html {
 }
 .entourage-tab-btn.active,
 .entourage-tab-btn:hover {
-  background: #F14E95;
+  background: #B96D7D;
   color: #fff;
-  box-shadow: 0 6px 18px rgba(241, 78, 149, 0.35);
+  box-shadow: 0 6px 18px rgba(185, 109, 125, 0.35);
 }
 .entourage-panel {
   display: none;
@@ -2437,13 +2437,13 @@ html {
   border-radius: 12px;
   padding: 26px 20px;
   margin-bottom: 24px;
-  border-left: 3px solid #F14E95;
+  border-left: 3px solid #B96D7D;
   box-shadow: 0 4px 15px rgba(0,0,0,0.04);
 }
 .entourage-group-title {
   font-family: "Sacramento", cursive;
   font-size: 34px;
-  color: #F14E95;
+  color: #B96D7D;
   margin-top: 0;
   margin-bottom: 12px;
 }
@@ -2478,7 +2478,7 @@ html {
   display: inline-block;
   margin-top: 10px;
   padding: 6px 18px;
-  background: rgba(241, 78, 149, 0.2);
+  background: rgba(185, 109, 125, 0.2);
   color: #f4a7b9;
   border-radius: 20px;
   font-weight: 600;
@@ -2490,8 +2490,8 @@ html {
 #fh5co-attire {
   padding: 7em 0;
   background: #fdfafb;
-  border-top: 1px solid rgba(241, 78, 149, 0.08);
-  border-bottom: 1px solid rgba(241, 78, 149, 0.08);
+  border-top: 1px solid rgba(185, 109, 125, 0.08);
+  border-bottom: 1px solid rgba(185, 109, 125, 0.08);
 }
 @media (max-width: 768px) {
   #fh5co-attire {
@@ -2503,21 +2503,21 @@ html {
   border-radius: 16px;
   padding: 36px 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(241, 78, 149, 0.12);
+  border: 1px solid rgba(185, 109, 125, 0.12);
   transition: all 0.3s ease;
   height: 100%;
   margin-bottom: 25px;
 }
 .attire-card-modern:hover {
   transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(241, 78, 149, 0.14);
+  box-shadow: 0 16px 40px rgba(185, 109, 125, 0.14);
 }
 .attire-card-icon {
   width: 52px;
   height: 52px;
   border-radius: 50%;
   background: #fdf0f5;
-  color: #F14E95;
+  color: #B96D7D;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2527,8 +2527,8 @@ html {
 .attire-badge {
   display: inline-block;
   padding: 4px 14px;
-  background: rgba(241, 78, 149, 0.1);
-  color: #F14E95;
+  background: rgba(185, 109, 125, 0.1);
+  color: #B96D7D;
   border-radius: 20px;
   font-weight: 600;
   font-size: 13px;
@@ -2562,7 +2562,7 @@ html {
   margin-bottom: 0;
 }
 .attire-list li i {
-  color: #F14E95;
+  color: #B96D7D;
   font-size: 14px;
   margin-top: 5px;
   flex-shrink: 0;
@@ -2577,13 +2577,13 @@ html {
   border-radius: 16px;
   padding: 38px 25px 32px 25px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(241, 78, 149, 0.12);
+  border: 1px solid rgba(185, 109, 125, 0.12);
   text-align: center;
 }
 .color-palette-title {
   font-family: "Sacramento", cursive;
   font-size: 40px;
-  color: #F14E95;
+  color: #B96D7D;
   margin-top: 0;
   margin-bottom: 6px;
 }
@@ -2651,22 +2651,22 @@ html {
 /* Attire Etiquette / Gentle Reminders Box */
 .attire-etiquette-box {
   background: #fff9fa;
-  border: 1px dashed #F14E95;
+  border: 1px dashed #B96D7D;
   border-radius: 14px;
   padding: 22px 28px;
   display: flex;
   align-items: flex-start;
   gap: 18px;
-  box-shadow: 0 4px 15px rgba(241, 78, 149, 0.05);
+  box-shadow: 0 4px 15px rgba(185, 109, 125, 0.05);
 }
 .attire-etiquette-icon {
   font-size: 26px;
-  color: #F14E95;
+  color: #B96D7D;
   flex-shrink: 0;
   margin-top: 2px;
 }
 .attire-etiquette-text strong {
-  color: #F14E95;
+  color: #B96D7D;
   font-size: 16px;
   display: block;
   margin-bottom: 8px;
@@ -2689,6 +2689,243 @@ html {
   .attire-card-modern {
     padding: 26px 20px;
   }
+}
+
+/* ============================================================
+   CUSTOM FULLSCREEN LIGHTBOX MODAL (100% RELIABLE)
+   ============================================================ */
+.wedding-lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(18, 15, 16, 0.95);
+  z-index: 9999999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.lightbox-inner {
+  position: relative;
+  max-width: 900px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+#lightbox-main-img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  animation: lightboxZoomIn 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes lightboxZoomIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.lightbox-meta {
+  margin-top: 14px;
+  text-align: center;
+  color: #ffffff;
+}
+#lightbox-caption-text {
+  font-family: 'Sacramento', cursive;
+  font-size: 32px;
+  color: #F7BAC5;
+  margin: 0 0 4px 0;
+}
+#lightbox-counter-text {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.lightbox-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 38px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: all 0.2s ease;
+  z-index: 10000001;
+}
+.lightbox-close-btn:hover {
+  background: #B96D7D;
+  transform: scale(1.1);
+}
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  border: none;
+  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10000001;
+}
+.lightbox-nav-btn:hover {
+  background: #B96D7D;
+  transform: translateY(-50%) scale(1.1);
+}
+.lightbox-prev-btn { left: 25px; }
+.lightbox-next-btn { right: 25px; }
+
+@media (max-width: 768px) {
+  .lightbox-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .lightbox-prev-btn { left: 10px; }
+  .lightbox-next-btn { right: 10px; }
+  .lightbox-close-btn {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+  }
+  #lightbox-main-img {
+    max-height: 70vh;
+  }
+}
+
+/* ============================================================
+   GIFT GUIDE, IMPORTANT NOTES & LOCATION
+   ============================================================ */
+#fh5co-gift-notes {
+  padding: 7em 0;
+  background: #FAF6F2;
+  border-top: 1px solid rgba(185, 109, 125, 0.1);
+  border-bottom: 1px solid rgba(185, 109, 125, 0.1);
+}
+@media (max-width: 768px) {
+  #fh5co-gift-notes {
+    padding: 3.5em 0;
+  }
+}
+.gift-notes-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 36px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(185, 109, 125, 0.12);
+  margin-bottom: 25px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+.gift-notes-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(185, 109, 125, 0.12);
+}
+.gift-notes-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #FDF5F6;
+  color: #B96D7D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+.gift-notes-title {
+  font-family: 'Sacramento', cursive;
+  font-size: 40px;
+  color: #B96D7D;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.notes-bullet-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.notes-bullet-list li {
+  margin-bottom: 16px;
+  font-size: 15px;
+  color: #4A4A4A;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.notes-bullet-list li i {
+  color: #B96D7D;
+  font-size: 15px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+.location-qr-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 34px 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(185, 109, 125, 0.12);
+  text-align: center;
+  margin-top: 20px;
+}
+.location-qr-img {
+  max-width: 170px;
+  border-radius: 10px;
+  padding: 8px;
+  border: 2px dashed #B96D7D;
+  margin-bottom: 15px;
+}
+.official-hashtag-pill {
+  display: inline-block;
+  background: #FDF5F6;
+  color: #B96D7D;
+  border: 1.5px solid #B96D7D;
+  border-radius: 30px;
+  padding: 8px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 15px;
+}
+.attire-illustration-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(185, 109, 125, 0.12);
+  text-align: center;
+  margin-top: 25px;
+}
+.attire-illustration-box img {
+  max-width: 100%;
+  max-height: 520px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
 /*# sourceMappingURL=style.css.map */
