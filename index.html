@@ -641,19 +641,17 @@
 			successBox.style.display = "none";
 			errorBox.style.display   = "none";
 
-			var payload = {
-				name:      name,
-				email:     email,
-				attending: attending.value,
-				guests:    attending.value === "Yes" ? guests : "0",
-				message:   message
-			};
+			var formData = new FormData();
+			formData.append("name",      name);
+			formData.append("email",     email);
+			formData.append("attending", attending.value);
+			formData.append("guests",    attending.value === "Yes" ? guests : "0");
+			formData.append("message",   message);
 
 			fetch(SCRIPT_URL, {
 				method: "POST",
-				mode:   "no-cors",   // Google Apps Script requires no-cors
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(payload)
+				mode:   "no-cors",
+				body:   formData
 			})
 			.then(function () {
 				// no-cors returns opaque response — assume success
