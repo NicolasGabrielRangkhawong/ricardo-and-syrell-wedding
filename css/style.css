@@ -1254,21 +1254,29 @@ form label {
   height: 150px;
 }
 .couple-half .groom img, .couple-half .bride img {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 10px 30px rgba(185, 109, 125, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.couple-half .groom:hover img, .couple-half .bride:hover img {
+  transform: scale(1.04);
+  box-shadow: 0 14px 35px rgba(185, 109, 125, 0.35);
 }
 @media screen and (max-width: 480px) {
   .couple-half .groom, .couple-half .bride {
     width: 100%;
-    height: 140px;
+    height: auto;
   }
   .couple-half .groom img, .couple-half .bride img {
-    width: 120px;
-    height: 120px;
+    width: 135px;
+    height: 135px;
     margin: 0 auto;
   }
 }
