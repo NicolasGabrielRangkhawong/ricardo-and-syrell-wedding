@@ -2308,6 +2308,8 @@ html {
   height: 280px;
   overflow: hidden;
   border-radius: 4px;
+  position: relative;
+  cursor: pointer;
 }
 @media (max-width: 480px) {
   .swiper-gallery .swiper-slide-img-wrap {
@@ -2322,7 +2324,41 @@ html {
   transition: transform 0.4s ease;
 }
 .swiper-gallery .swiper-slide:hover img {
-  transform: scale(1.04);
+  transform: scale(1.05);
+}
+.gallery-zoom-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.68);
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+  z-index: 5;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.gallery-zoom-badge i {
+  font-size: 13px;
+}
+.swiper-slide:hover .gallery-zoom-badge,
+.swiper-slide-active .gallery-zoom-badge {
+  background: rgba(241, 78, 149, 0.9);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.gallery-zoom-badge:hover {
+  background: #F14E95 !important;
+  color: #fff !important;
+  box-shadow: 0 6px 16px rgba(241, 78, 149, 0.45);
 }
 .swiper-gallery .swiper-slide-caption {
   font-family: "Sacramento", cursive;
@@ -2448,6 +2484,211 @@ html {
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 1px;
+}
+
+/* Wedding Attire & Color Motif Section */
+#fh5co-attire {
+  padding: 7em 0;
+  background: #fdfafb;
+  border-top: 1px solid rgba(241, 78, 149, 0.08);
+  border-bottom: 1px solid rgba(241, 78, 149, 0.08);
+}
+@media (max-width: 768px) {
+  #fh5co-attire {
+    padding: 3.5em 0;
+  }
+}
+.attire-card-modern {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 36px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(241, 78, 149, 0.12);
+  transition: all 0.3s ease;
+  height: 100%;
+  margin-bottom: 25px;
+}
+.attire-card-modern:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(241, 78, 149, 0.14);
+}
+.attire-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fdf0f5;
+  color: #F14E95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.attire-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: rgba(241, 78, 149, 0.1);
+  color: #F14E95;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.attire-card-title {
+  font-family: 'Work Sans', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.attire-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.attire-list li {
+  margin-bottom: 16px;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.attire-list li:last-child {
+  margin-bottom: 0;
+}
+.attire-list li i {
+  color: #F14E95;
+  font-size: 14px;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+.attire-list li strong {
+  color: #222;
+}
+
+/* Color Motif Palette Container */
+.color-palette-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 38px 25px 32px 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(241, 78, 149, 0.12);
+  text-align: center;
+}
+.color-palette-title {
+  font-family: "Sacramento", cursive;
+  font-size: 40px;
+  color: #F14E95;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+.color-palette-subtitle {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 30px;
+}
+.color-palette-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.palette-swatch-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 105px;
+}
+.swatch-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+  margin-bottom: 10px;
+  border: 3px solid #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.palette-swatch-item:hover .swatch-circle {
+  transform: scale(1.15);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+.swatch-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #222;
+  margin-bottom: 2px;
+  text-align: center;
+}
+.swatch-code {
+  font-size: 12px;
+  color: #888;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 480px) {
+  .color-palette-grid {
+    gap: 16px;
+  }
+  .palette-swatch-item {
+    width: 85px;
+  }
+  .swatch-circle {
+    width: 54px;
+    height: 54px;
+  }
+  .swatch-name {
+    font-size: 13px;
+  }
+}
+
+/* Attire Etiquette / Gentle Reminders Box */
+.attire-etiquette-box {
+  background: #fff9fa;
+  border: 1px dashed #F14E95;
+  border-radius: 14px;
+  padding: 22px 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  box-shadow: 0 4px 15px rgba(241, 78, 149, 0.05);
+}
+.attire-etiquette-icon {
+  font-size: 26px;
+  color: #F14E95;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.attire-etiquette-text strong {
+  color: #F14E95;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.attire-etiquette-text p {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.55;
+}
+.attire-etiquette-text p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 480px) {
+  .attire-etiquette-box {
+    padding: 18px;
+    gap: 12px;
+  }
+  .attire-card-modern {
+    padding: 26px 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
