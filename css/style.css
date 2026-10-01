@@ -365,51 +365,98 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 
-#fh5co-counter,
-#fh5co-event {
+#fh5co-counter {
   height: 850px;
   float: left;
 }
 #fh5co-counter .display-t,
-#fh5co-counter .display-tc,
-#fh5co-event .display-t,
-#fh5co-event .display-tc {
+#fh5co-counter .display-tc {
   height: 700px;
   display: table;
   width: 100%;
 }
-#fh5co-counter .fh5co-heading h2,
-#fh5co-event .fh5co-heading h2 {
+#fh5co-counter .fh5co-heading h2 {
   color: #fff;
 }
-#fh5co-counter .fh5co-heading span,
-#fh5co-event .fh5co-heading span {
+#fh5co-counter .fh5co-heading span {
   color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 2px;
   font-weight: 600;
 }
-#fh5co-counter .overlay,
-#fh5co-event .overlay {
+#fh5co-counter .overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.4);
+  pointer-events: none !important;
+}
+
+/* Event Section - Natural Responsive Height (Prevents Top Text Clipping) */
+#fh5co-event {
+  height: auto !important;
+  min-height: auto !important;
+  float: none !important;
+  display: block !important;
+  clear: both !important;
+  padding: 6.5em 0 !important;
+  position: relative !important;
+  z-index: 1;
+}
+#fh5co-event .display-t,
+#fh5co-event .display-tc {
+  height: auto !important;
+  min-height: auto !important;
+  display: block !important;
+  width: 100% !important;
+}
+#fh5co-event .fh5co-heading {
+  margin-bottom: 45px !important;
+}
+#fh5co-event .fh5co-heading h2 {
+  color: #fff;
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+#fh5co-event .fh5co-heading span {
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+#fh5co-event .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: none !important;
+  z-index: 1;
+}
+#fh5co-event > .container {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
 }
 @media screen and (max-width: 768px) {
-  #fh5co-counter,
-  #fh5co-event {
+  #fh5co-counter {
     height: inherit;
     padding: 7em 0;
+  }
+  #fh5co-event {
+    height: auto !important;
+    padding: 4.5em 0 !important;
   }
   #fh5co-counter .display-t,
   #fh5co-counter .display-tc,
   #fh5co-event .display-t,
   #fh5co-event .display-tc {
-    height: inherit;
+    height: auto !important;
   }
 }
 #fh5co-counter .event-wrap,
@@ -1145,7 +1192,26 @@ form label {
 }
 @media screen and (max-width: 768px) {
   .heart {
-    display: none;
+    display: block !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 25px auto 35px auto !important;
+    text-align: center !important;
+    clear: both !important;
+    z-index: 10 !important;
+  }
+  .heart i {
+    font-size: 22px !important;
+    background: #ffffff !important;
+    padding: 16px !important;
+    color: #B96D7D !important;
+    border-radius: 50% !important;
+    border: 2px solid #F7BAC5 !important;
+    box-shadow: 0 4px 16px rgba(185, 109, 125, 0.25) !important;
+    display: inline-block !important;
   }
 }
 
@@ -1423,6 +1489,7 @@ form label {
 
 #fh5co-started {
   position: relative;
+  z-index: 1;
 }
 #fh5co-started .overlay {
   position: absolute;
@@ -1430,7 +1497,14 @@ form label {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: none !important;
+  z-index: 1;
+}
+#fh5co-started > .container {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
 }
 #fh5co-started .fh5co-heading h2 {
   color: #fff;
@@ -2071,15 +2145,26 @@ form label {
 
 /* RSVP Card & Mobile Form Enhancements */
 .rsvp-card-wrapper {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 16px;
   padding: 35px 30px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   max-width: 620px;
   margin: 0 auto;
+  position: relative;
+  z-index: 20;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.rsvp-card-wrapper form {
+  position: relative;
+  z-index: 21;
+  pointer-events: auto !important;
 }
 
 .rsvp-attendance-container {
@@ -2105,8 +2190,10 @@ form label {
   font-weight: 500;
   transition: all 0.25s ease;
   margin-bottom: 0 !important;
-  user-select: none;
+  pointer-events: auto !important;
   -webkit-tap-highlight-color: transparent;
+  position: relative;
+  z-index: 25;
 }
 
 .rsvp-attendance-btn:hover {
@@ -2132,20 +2219,26 @@ form label {
   margin: 0;
   cursor: pointer;
   accent-color: #fff;
+  pointer-events: auto !important;
 }
 
 #fh5co-started .form-control {
-  background: rgba(255, 255, 255, 0.15) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
   border-radius: 8px !important;
   color: #fff !important;
   font-size: 16px !important; /* Prevents auto-zoom on iOS */
-  padding: 10px 14px !important;
+  padding: 12px 14px !important;
   transition: all 0.3s ease;
+  pointer-events: auto !important;
+  -webkit-user-select: text !important;
+  user-select: text !important;
+  position: relative;
+  z-index: 25;
 }
 
 #fh5co-started .form-control:focus {
-  background: rgba(255, 255, 255, 0.25) !important;
+  background: rgba(255, 255, 255, 0.28) !important;
   border-color: #B96D7D !important;
   box-shadow: 0 0 10px rgba(185, 109, 125, 0.5) !important;
 }
@@ -2174,30 +2267,40 @@ form label {
   border: none !important;
   box-shadow: 0 8px 20px rgba(185, 109, 125, 0.4);
   transition: all 0.3s ease;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 25;
 }
 
 #rsvp-submit-btn:hover, #rsvp-submit-btn:focus {
-  background: #d9337b !important;
+  background: #A25364 !important;
   box-shadow: 0 10px 25px rgba(185, 109, 125, 0.6);
   transform: translateY(-2px);
 }
 
 @media screen and (max-width: 768px) {
   #fh5co-started {
-    padding: 4em 0 !important;
+    padding: 4.5em 0 !important;
   }
   .rsvp-card-wrapper {
     padding: 24px 18px;
     border-radius: 12px;
   }
+  .rsvp-attendance-container {
+    flex-direction: column;
+    gap: 10px;
+  }
   .rsvp-attendance-btn {
     flex: 1 1 100%;
+    width: 100%;
     padding: 13px 16px;
-    font-size: 16px;
+    font-size: 15px;
   }
   #rsvp-submit-btn {
     max-width: 100%;
-    height: 50px;
+    width: 100%;
+    height: 52px;
     font-size: 16px !important;
   }
 }
@@ -2215,19 +2318,58 @@ html {
   scroll-margin-top: 50px;
 }
 
-/* Navbar RSVP CTA Button */
+/* Navbar RSVP CTA Button & Alignment */
+.fh5co-nav .menu-1 ul {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+}
+.fh5co-nav .menu-1 ul li {
+  display: inline-flex;
+  align-items: center;
+}
+.fh5co-nav .menu-1 ul li a {
+  padding: 8px 9px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
 .fh5co-nav .menu-1 ul li a.nav-rsvp-btn {
-  background: #B96D7D;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 34px !important;
+  padding: 0 16px !important;
+  background: #B96D7D !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.75) !important;
   color: #fff !important;
-  padding: 8px 18px !important;
-  border-radius: 20px;
-  margin-left: 10px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  border-radius: 20px !important;
+  margin-left: 8px !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  letter-spacing: 1px !important;
+  line-height: 1 !important;
+  box-shadow: 0 3px 10px rgba(185, 109, 125, 0.35) !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
 }
 .fh5co-nav .menu-1 ul li a.nav-rsvp-btn:hover {
-  background: #d9337b;
-  box-shadow: 0 4px 12px rgba(185, 109, 125, 0.4);
+  background: #A25364 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 5px 15px rgba(185, 109, 125, 0.5) !important;
+  transform: translateY(-1px);
+}
+#fh5co-offcanvas ul li a.nav-rsvp-btn {
+  background: #B96D7D !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  color: #fff !important;
+  display: inline-block !important;
+  padding: 8px 24px !important;
+  border-radius: 20px !important;
+  margin-top: 10px !important;
 }
 
 /* Enlarge Couple Section Typography */
@@ -2296,36 +2438,80 @@ html {
   margin-top: 2px;
 }
 .event-venue-box {
-  margin-top: 22px;
-  padding-top: 18px;
+  margin-top: 20px;
+  padding-top: 16px;
   border-top: 1px dashed #ddd;
+}
+.event-venue-click-wrap {
+  display: block;
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: pointer;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: rgba(185, 109, 125, 0.04);
+  border: 1px solid rgba(185, 109, 125, 0.12);
+  transition: all 0.25s ease;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 20;
+}
+.event-venue-click-wrap:hover,
+.event-venue-click-wrap:active {
+  background: rgba(185, 109, 125, 0.1);
+  border-color: #B96D7D;
+}
+.event-venue-click-wrap:hover .event-venue-name {
+  color: #B96D7D;
 }
 .event-venue-name {
   font-size: 19px;
   font-weight: 700;
   color: #333;
   margin-bottom: 4px;
+  transition: color 0.2s ease;
 }
 .event-venue-addr {
   font-size: 14px;
   color: #777;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 .btn-map-link {
-  display: inline-block;
-  font-size: 12px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 22px !important;
+  font-size: 13px !important;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
-  color: #B96D7D;
-  border: 1.5px solid #B96D7D;
-  padding: 6px 16px;
-  border-radius: 20px;
+  color: #B96D7D !important;
+  border: 1.5px solid #B96D7D !important;
+  border-radius: 25px !important;
+  background: #ffffff !important;
   transition: all 0.3s ease;
+  cursor: pointer;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 20;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(185, 109, 125, 0.15);
 }
-.btn-map-link:hover {
-  background: #B96D7D;
-  color: #fff;
+.btn-map-link:hover,
+.btn-map-link:active {
+  background: #B96D7D !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(185, 109, 125, 0.35);
+  transform: translateY(-2px);
+}
+@media (max-width: 480px) {
+  .btn-map-link {
+    width: 100%;
+    max-width: 280px;
+  }
 }
 
 /* Video Section (Replaces Story) */
