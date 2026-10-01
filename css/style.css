@@ -1840,4 +1840,179 @@ form label {
   opacity: 0;
 }
 
+/* ==========================================================
+   MOBILE RESPONSIVENESS & TOUCH OPTIMIZATIONS
+   ========================================================== */
+
+/* Responsive Countdown Timer */
+@media screen and (max-width: 768px) {
+  .simply-countdown > .simply-section {
+    width: 80px;
+    height: 80px;
+    margin: 0 3px;
+  }
+  .simply-countdown > .simply-section > div {
+    width: 80px;
+    height: 80px;
+  }
+  .simply-countdown > .simply-section .simply-amount {
+    font-size: 24px;
+  }
+  .simply-countdown > .simply-section .simply-word {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .simply-countdown > .simply-section {
+    width: 68px;
+    height: 68px;
+    margin: 0 2px;
+  }
+  .simply-countdown > .simply-section > div {
+    width: 68px;
+    height: 68px;
+  }
+  .simply-countdown > .simply-section .simply-amount {
+    font-size: 20px;
+  }
+  .simply-countdown > .simply-section .simply-word {
+    font-size: 8px;
+  }
+}
+
+/* RSVP Card & Mobile Form Enhancements */
+.rsvp-card-wrapper {
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 35px 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.rsvp-attendance-container {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rsvp-attendance-btn {
+  flex: 1 1 calc(50% - 6px);
+  min-width: 140px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  margin-bottom: 0 !important;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rsvp-attendance-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.rsvp-attendance-btn.selected-yes {
+  background: #28a745 !important;
+  border-color: #5cd679 !important;
+  box-shadow: 0 4px 14px rgba(40, 167, 69, 0.45);
+}
+
+.rsvp-attendance-btn.selected-no {
+  background: #d9534f !important;
+  border-color: #ff7a75 !important;
+  box-shadow: 0 4px 14px rgba(217, 83, 79, 0.45);
+}
+
+.rsvp-attendance-btn input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #fff;
+}
+
+#fh5co-started .form-control {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  font-size: 16px !important; /* Prevents auto-zoom on iOS */
+  padding: 10px 14px !important;
+  transition: all 0.3s ease;
+}
+
+#fh5co-started .form-control:focus {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: #F14E95 !important;
+  box-shadow: 0 0 10px rgba(241, 78, 149, 0.5) !important;
+}
+
+#rsvp-guests option {
+  background: #262626 !important;
+  color: #fff !important;
+  padding: 8px 12px;
+}
+
+.rsvp-submit-btn-wrap {
+  margin-top: 25px;
+  text-align: center;
+}
+
+#rsvp-submit-btn {
+  width: 100%;
+  max-width: 320px;
+  height: 52px;
+  background: #F14E95 !important;
+  color: #fff !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+  border-radius: 30px !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(241, 78, 149, 0.4);
+  transition: all 0.3s ease;
+}
+
+#rsvp-submit-btn:hover, #rsvp-submit-btn:focus {
+  background: #d9337b !important;
+  box-shadow: 0 10px 25px rgba(241, 78, 149, 0.6);
+  transform: translateY(-2px);
+}
+
+@media screen and (max-width: 768px) {
+  #fh5co-started {
+    padding: 4em 0 !important;
+  }
+  .rsvp-card-wrapper {
+    padding: 24px 18px;
+    border-radius: 12px;
+  }
+  .rsvp-attendance-btn {
+    flex: 1 1 100%;
+    padding: 13px 16px;
+    font-size: 16px;
+  }
+  #rsvp-submit-btn {
+    max-width: 100%;
+    height: 50px;
+    font-size: 16px !important;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
+

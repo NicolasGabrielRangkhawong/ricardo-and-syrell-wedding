@@ -533,73 +533,77 @@
 				</div>
 			</div>
 			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2">
-					<!-- Hidden iframe for reliable submission -->
-					<iframe name="rsvp_hidden_iframe" id="rsvp_hidden_iframe" style="display:none;"></iframe>
+				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+					<div class="rsvp-card-wrapper">
+						<!-- Hidden iframe for reliable submission -->
+						<iframe name="rsvp_hidden_iframe" id="rsvp_hidden_iframe" style="display:none;"></iframe>
 
-					<form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbwhqXnXOsaNYGAAHriTHxDdn8m4swxMB1NV5cIE7rnq7wBN_7QQs7ElQ8KIiXB3q9Yz/exec" method="GET" target="rsvp_hidden_iframe">
+						<form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbwhqXnXOsaNYGAAHriTHxDdn8m4swxMB1NV5cIE7rnq7wBN_7QQs7ElQ8KIiXB3q9Yz/exec" method="GET" target="rsvp_hidden_iframe">
 
-						<!-- Name -->
-						<div class="form-group" style="margin-bottom:16px;">
-							<label for="rsvp-name" style="color:#fff; font-weight:600; display:block; margin-bottom:6px;">Full Name <span style="color:#f4a7b9;">*</span></label>
-							<input type="text" class="form-control" id="rsvp-name" name="name" placeholder="Your full name" required style="border-radius:4px; height:44px;">
-						</div>
-
-						<!-- Email -->
-						<div class="form-group" style="margin-bottom:16px;">
-							<label for="rsvp-email" style="color:#fff; font-weight:600; display:block; margin-bottom:6px;">Email Address <span style="color:#f4a7b9;">*</span></label>
-							<input type="email" class="form-control" id="rsvp-email" name="email" placeholder="your@email.com" required style="border-radius:4px; height:44px;">
-						</div>
-
-						<!-- Attending -->
-						<div class="form-group" style="margin-bottom:16px;">
-							<label style="color:#fff; font-weight:600; display:block; margin-bottom:10px;">Will you be attending? <span style="color:#f4a7b9;">*</span></label>
-							<div style="display:flex; gap:12px; flex-wrap:wrap;">
-								<label style="cursor:pointer; display:flex; align-items:center; gap:8px; color:#fff; font-weight:400;">
-									<input type="radio" name="attending" value="Yes" required> &nbsp;✅ Yes, I'll be there!
-								</label>
-								<label style="cursor:pointer; display:flex; align-items:center; gap:8px; color:#fff; font-weight:400;">
-									<input type="radio" name="attending" value="No"> &nbsp;❌ Sorry, can't make it
-								</label>
+							<!-- Name -->
+							<div class="form-group" style="margin-bottom:18px;">
+								<label for="rsvp-name" style="color:#fff; font-weight:600; font-size:15px; display:block; margin-bottom:6px;">Full Name <span style="color:#f4a7b9;">*</span></label>
+								<input type="text" class="form-control" id="rsvp-name" name="name" placeholder="Your full name" required style="height:46px;">
 							</div>
-						</div>
 
-						<!-- Number of Guests (shown only if attending Yes) -->
-						<div class="form-group" id="guests-group" style="margin-bottom:16px; display:none;">
-							<label for="rsvp-guests" style="color:#fff; font-weight:600; display:block; margin-bottom:6px;">Number of guests (including yourself)</label>
-							<select class="form-control" id="rsvp-guests" name="guests" style="border-radius:4px; height:44px;">
-								<option value="1">Just me (1)</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5+</option>
-								<option value="0" id="opt-guests-0" style="display:none;">0</option>
-							</select>
-						</div>
+							<!-- Email -->
+							<div class="form-group" style="margin-bottom:18px;">
+								<label for="rsvp-email" style="color:#fff; font-weight:600; font-size:15px; display:block; margin-bottom:6px;">Email Address <span style="color:#f4a7b9;">*</span></label>
+								<input type="email" class="form-control" id="rsvp-email" name="email" placeholder="your@email.com" required style="height:46px;">
+							</div>
 
-						<!-- Message / Notes -->
-						<div class="form-group" style="margin-bottom:24px;">
-							<label for="rsvp-message" style="color:#fff; font-weight:600; display:block; margin-bottom:6px;">Message / Dietary Notes <span style="color:rgba(255,255,255,0.5); font-weight:400;">(optional)</span></label>
-							<textarea class="form-control" id="rsvp-message" name="message" rows="3" placeholder="Any dietary restrictions, allergies, or a sweet message for the couple..." style="border-radius:4px; resize:vertical;"></textarea>
-						</div>
+							<!-- Attending Options -->
+							<div class="form-group" style="margin-bottom:18px;">
+								<label style="color:#fff; font-weight:600; font-size:15px; display:block; margin-bottom:10px;">Will you be attending? <span style="color:#f4a7b9;">*</span></label>
+								<div class="rsvp-attendance-container">
+									<label class="rsvp-attendance-btn" id="btn-attending-yes">
+										<input type="radio" name="attending" value="Yes" required>
+										<span>✅ Yes, I'll be there!</span>
+									</label>
+									<label class="rsvp-attendance-btn" id="btn-attending-no">
+										<input type="radio" name="attending" value="No">
+										<span>❌ Sorry, can't make it</span>
+									</label>
+								</div>
+							</div>
 
-						<!-- Submit -->
-						<div class="form-group text-center">
-							<button type="submit" id="rsvp-submit-btn" class="btn btn-default btn-lg" style="min-width:200px; font-weight:600; letter-spacing:1px;">
-								Send RSVP 💌
-							</button>
-						</div>
+							<!-- Number of Guests (shown only if attending Yes) -->
+							<div class="form-group" id="guests-group" style="margin-bottom:18px; display:none;">
+								<label for="rsvp-guests" style="color:#fff; font-weight:600; font-size:15px; display:block; margin-bottom:6px;">Number of guests (including yourself)</label>
+								<select class="form-control" id="rsvp-guests" name="guests" style="height:46px;">
+									<option value="1">Just me (1)</option>
+									<option value="2">2 guests</option>
+									<option value="3">3 guests</option>
+									<option value="4">4 guests</option>
+									<option value="5">5+ guests</option>
+									<option value="0" id="opt-guests-0" style="display:none;">0</option>
+								</select>
+							</div>
 
-						<!-- Feedback messages -->
-						<div id="rsvp-success" style="display:none; margin-top:20px; padding:16px 20px; background:rgba(255,255,255,0.15); border:2px solid #fff; border-radius:8px; text-align:center; color:#fff;">
-							<strong style="font-size:1.2em;">🎉 Thank you!</strong><br>
-							<span id="rsvp-success-msg"></span>
-						</div>
-						<div id="rsvp-error" style="display:none; margin-top:20px; padding:16px 20px; background:rgba(220,53,69,0.3); border:2px solid #ff6b6b; border-radius:8px; text-align:center; color:#fff;">
-							<strong>⚠️ Oops!</strong> Something went wrong. Please try again or contact us directly.
-						</div>
+							<!-- Message / Notes -->
+							<div class="form-group" style="margin-bottom:20px;">
+								<label for="rsvp-message" style="color:#fff; font-weight:600; font-size:15px; display:block; margin-bottom:6px;">Message / Dietary Notes <span style="color:rgba(255,255,255,0.6); font-weight:400; font-size:13px;">(optional)</span></label>
+								<textarea class="form-control" id="rsvp-message" name="message" rows="3" placeholder="Dietary restrictions, allergies, or a message for the couple..." style="resize:vertical;"></textarea>
+							</div>
 
-					</form>
+							<!-- Submit -->
+							<div class="rsvp-submit-btn-wrap">
+								<button type="submit" id="rsvp-submit-btn" class="btn">
+									Send RSVP 💌
+								</button>
+							</div>
+
+							<!-- Feedback messages -->
+							<div id="rsvp-success" style="display:none; margin-top:22px; padding:18px 20px; background:rgba(40,167,69,0.3); border:2px solid #5cd679; border-radius:12px; text-align:center; color:#fff;">
+								<strong style="font-size:1.25em;">🎉 Thank you!</strong><br>
+								<span id="rsvp-success-msg" style="font-size:15px; line-height:1.5; display:inline-block; margin-top:6px;"></span>
+							</div>
+							<div id="rsvp-error" style="display:none; margin-top:22px; padding:18px 20px; background:rgba(220,53,69,0.3); border:2px solid #ff7a75; border-radius:12px; text-align:center; color:#fff;">
+								<strong>⚠️ Oops!</strong> Something went wrong. Please try again or contact us directly.
+							</div>
+
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -615,16 +619,22 @@
 		var errorBox   = document.getElementById("rsvp-error");
 		var guestsGrp  = document.getElementById("guests-group");
 		var guestsSel  = document.getElementById("rsvp-guests");
+		var btnYes     = document.getElementById("btn-attending-yes");
+		var btnNo      = document.getElementById("btn-attending-no");
 
-		// Show/hide guest count based on attendance selection
+		// Show/hide guest count and highlight active card
 		document.querySelectorAll('input[name="attending"]').forEach(function (radio) {
 			radio.addEventListener("change", function () {
 				if (this.value === "Yes") {
+					btnYes.classList.add("selected-yes");
+					btnNo.classList.remove("selected-no");
 					guestsGrp.style.display = "block";
 					if (guestsSel.value === "0") {
 						guestsSel.value = "1";
 					}
 				} else {
+					btnNo.classList.add("selected-no");
+					btnYes.classList.remove("selected-yes");
 					guestsGrp.style.display = "none";
 					guestsSel.value = "0";
 				}
@@ -656,6 +666,8 @@
 					successMsg.textContent = "We'll miss you! Thank you for letting us know. 💐";
 				}
 				form.reset();
+				btnYes.classList.remove("selected-yes");
+				btnNo.classList.remove("selected-no");
 				guestsGrp.style.display = "none";
 			}, 1500);
 		});
