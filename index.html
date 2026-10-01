@@ -57,10 +57,10 @@
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-3 col-sm-2">
+				<div class="col-xs-8 col-sm-4">
 					<div id="fh5co-logo"><a href="#fh5co-header">Ric <span>&amp;</span> Sy</a></div>
 				</div>
-				<div class="col-xs-9 col-sm-10 text-right menu-1">
+				<div class="col-xs-4 col-sm-8 text-right menu-1">
 					<ul>
 						<li class="active"><a href="#fh5co-header">Home</a></li>
 						<li><a href="#fh5co-couple">Couple</a></li>
@@ -88,11 +88,14 @@
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<span style="font-size:15px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.9); display:block; margin-bottom:12px; font-weight:600;">You Are Invited To The Wedding Of</span>
 							<h1>Ric &amp; Sy</h1>
-							<h2>Saturday, November 28, 2026 &bull; 1:30 PM</h2>
+							<h2 class="hero-date-wrapper">
+								<span class="hero-date">Saturday, November 28, 2026</span>
+								<span class="hero-time-badge"><i class="icon-clock"></i> 1:30 PM</span>
+							</h2>
 							<div class="simply-countdown simply-countdown-one"></div>
-							<p style="margin-top:20px;">
-								<a href="#fh5co-started" class="btn btn-default btn-sm" style="background:#B96D7D; color:#fff; border-color:#B96D7D; margin-right:8px;">RSVP Now</a>
-								<a href="#fh5co-event" class="btn btn-default btn-sm" style="background:rgba(255,255,255,0.2); color:#fff; border-color:#fff;">Wedding Events</a>
+							<p class="hero-actions-row">
+								<a href="#fh5co-started" class="btn hero-btn-rsvp">RSVP Now 💌</a>
+								<a href="#fh5co-event" class="btn hero-btn-events">Wedding Details</a>
 							</p>
 						</div>
 					</div>
@@ -610,7 +613,15 @@
 				<div class="col-md-10 col-md-offset-1">
 					<div class="attire-illustration-box">
 						<h4 style="font-family:'Sacramento', cursive; font-size:36px; color:#B96D7D; margin-top:0; margin-bottom:12px;">Visual Attire Guide</h4>
-						<img src="images/attire-guide.jpg" alt="Dress Code Visual Guide" class="img-responsive" style="margin: 0 auto; max-height:480px; border-radius:10px;">
+						<div class="attire-img-wrap" onclick="openSingleImageLightbox('images/attire-guide.jpg', 'Dress Code Visual Guide &mdash; Principal Sponsors, Family &amp; Friends')" style="position:relative; display:inline-block; cursor:pointer;">
+							<img src="images/attire-guide.jpg" alt="Dress Code Visual Guide" class="img-responsive" style="margin: 0 auto; max-height:480px; border-radius:10px;">
+							<div class="attire-zoom-badge">
+								<i class="icon-expand"></i> <span>Tap to Enlarge</span>
+							</div>
+						</div>
+						<p style="margin-top:12px; font-size:13px; color:#777; margin-bottom:0;">
+							<i class="icon-zoom-in"></i> <em>Click or tap illustration to view fullscreen for your eyes!</em>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -681,8 +692,10 @@
 					<div class="location-qr-card">
 						<div class="row">
 							<div class="col-md-4 col-sm-4 text-center">
-								<img src="images/invitation-gift-notes.jpg" alt="Location QR Code" class="location-qr-img img-responsive" style="margin: 0 auto 10px auto; max-height:180px; object-fit:contain;">
-								<span style="font-size:12px; color:#777; display:block;">Scan QR for Directions</span>
+								<div onclick="openSingleImageLightbox('images/invitation-gift-notes.jpg', 'Gift Guide, Important Notes &amp; Location QR Code')" style="cursor:pointer; display:inline-block;">
+									<img src="images/invitation-gift-notes.jpg" alt="Location QR Code" class="location-qr-img img-responsive" style="margin: 0 auto 6px auto; max-height:180px; object-fit:contain;">
+									<span style="font-size:12px; color:#B96D7D; font-weight:600; display:block;"><i class="icon-expand"></i> Tap to Enlarge QR</span>
+								</div>
 							</div>
 							<div class="col-md-8 col-sm-8 text-left">
 								<h3 style="font-family:'Sacramento', cursive; font-size:36px; color:#B96D7D; margin-top:5px; margin-bottom:10px;">Ceremony &amp; Reception Locations</h3>
@@ -872,10 +885,32 @@
 		var titleElem = document.getElementById('lightbox-caption-text');
 		var counterElem = document.getElementById('lightbox-counter-text');
 		var modalElem = document.getElementById('wedding-lightbox');
+		var prevBtn = document.getElementById('lightbox-prev');
+		var nextBtn = document.getElementById('lightbox-next');
 
 		if (imgElem) imgElem.src = item.src;
 		if (titleElem) titleElem.textContent = item.title;
 		if (counterElem) counterElem.textContent = (idx + 1) + ' of ' + weddingGalleryData.length;
+		if (prevBtn) prevBtn.style.display = 'flex';
+		if (nextBtn) nextBtn.style.display = 'flex';
+		if (modalElem) modalElem.style.display = 'flex';
+		document.body.style.overflow = 'hidden';
+	};
+
+	window.openSingleImageLightbox = function (src, title) {
+		var imgElem = document.getElementById('lightbox-main-img');
+		var titleElem = document.getElementById('lightbox-caption-text');
+		var counterElem = document.getElementById('lightbox-counter-text');
+		var modalElem = document.getElementById('wedding-lightbox');
+		var prevBtn = document.getElementById('lightbox-prev');
+		var nextBtn = document.getElementById('lightbox-next');
+
+		if (imgElem) imgElem.src = src;
+		if (titleElem) titleElem.innerHTML = title;
+		if (counterElem) counterElem.textContent = '';
+		if (prevBtn) prevBtn.style.display = 'none';
+		if (nextBtn) nextBtn.style.display = 'none';
+
 		if (modalElem) modalElem.style.display = 'flex';
 		document.body.style.overflow = 'hidden';
 	};
