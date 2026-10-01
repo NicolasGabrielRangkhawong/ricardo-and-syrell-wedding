@@ -534,7 +534,10 @@
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2">
-					<form id="rsvp-form">
+					<!-- Hidden iframe for reliable submission -->
+					<iframe name="rsvp_hidden_iframe" id="rsvp_hidden_iframe" style="display:none;"></iframe>
+
+					<form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbw6qXSp1jLJluMNf7QY1KaTtdlMhyF6giFsMthFHtzK6bkQtvaNX4VVJvPhmEN8Ouje/exec" method="GET" target="rsvp_hidden_iframe">
 
 						<!-- Name -->
 						<div class="form-group" style="margin-bottom:16px;">
@@ -570,6 +573,7 @@
 								<option value="3">3</option>
 								<option value="4">4</option>
 								<option value="5">5+</option>
+								<option value="0" id="opt-guests-0" style="display:none;">0</option>
 							</select>
 						</div>
 
@@ -604,72 +608,56 @@
 	<!-- ===== RSVP Script ===== -->
 	<script>
 	(function () {
-		// ─────────────────────────────────────────────────────────────
-		// STEP 1: After deploying your Google Apps Script (see README),
-		//         paste your Web App URL here:
-		var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw6qXSp1jLJluMNf7QY1KaTtdlMhyF6giFsMthFHtzK6bkQtvaNX4VVJvPhmEN8Ouje/exec";
-		// ─────────────────────────────────────────────────────────────
-
 		var form       = document.getElementById("rsvp-form");
 		var submitBtn  = document.getElementById("rsvp-submit-btn");
 		var successBox = document.getElementById("rsvp-success");
 		var successMsg = document.getElementById("rsvp-success-msg");
 		var errorBox   = document.getElementById("rsvp-error");
 		var guestsGrp  = document.getElementById("guests-group");
+		var guestsSel  = document.getElementById("rsvp-guests");
 
 		// Show/hide guest count based on attendance selection
 		document.querySelectorAll('input[name="attending"]').forEach(function (radio) {
 			radio.addEventListener("change", function () {
-				guestsGrp.style.display = this.value === "Yes" ? "block" : "none";
+				if (this.value === "Yes") {
+					guestsGrp.style.display = "block";
+					if (guestsSel.value === "0") {
+						guestsSel.value = "1";
+					}
+				} else {
+					guestsGrp.style.display = "none";
+					guestsSel.value = "0";
+				}
 			});
 		});
 
-		form.addEventListener("submit", function (e) {
-			e.preventDefault();
-
-			var name      = document.getElementById("rsvp-name").value.trim();
-			var email     = document.getElementById("rsvp-email").value.trim();
+		form.addEventListener("submit", function () {
 			var attending = document.querySelector('input[name="attending"]:checked');
-			var guests    = document.getElementById("rsvp-guests").value;
-			var message   = document.getElementById("rsvp-message").value.trim();
+			if (attending && attending.value === "No") {
+				guestsSel.value = "0";
+			}
 
-			if (!name || !email || !attending) return;
+			var isAttending = attending && attending.value === "Yes";
 
-			// Disable button while submitting
-			submitBtn.disabled = true;
-			submitBtn.textContent = "Sending…";
-			successBox.style.display = "none";
-			errorBox.style.display   = "none";
+			// Small timeout so form submission dispatches before disabling button
+			setTimeout(function () {
+				submitBtn.disabled = true;
+				submitBtn.textContent = "Sending…";
+			}, 20);
 
-			var params = new URLSearchParams();
-			params.append("name",      name);
-			params.append("email",     email);
-			params.append("attending", attending.value);
-			params.append("guests",    attending.value === "Yes" ? guests : "0");
-			params.append("message",   message);
-
-			fetch(SCRIPT_URL + "?" + params.toString(), {
-				method: "GET",
-				mode:   "no-cors"
-			})
-			.then(function () {
-				// no-cors returns opaque response — assume success
+			// Provide smooth success feedback after submission
+			setTimeout(function () {
+				submitBtn.disabled    = false;
+				submitBtn.textContent = "Send RSVP 💌";
 				successBox.style.display = "block";
-				if (attending.value === "Yes") {
+				if (isAttending) {
 					successMsg.textContent = "We've got your RSVP! We're so excited to celebrate with you. See you there! 🥂";
 				} else {
 					successMsg.textContent = "We'll miss you! Thank you for letting us know. 💐";
 				}
 				form.reset();
 				guestsGrp.style.display = "none";
-			})
-			.catch(function () {
-				errorBox.style.display = "block";
-			})
-			.finally(function () {
-				submitBtn.disabled    = false;
-				submitBtn.textContent = "Send RSVP 💌";
-			});
+			}, 1500);
 		});
 	})();
 	</script>
