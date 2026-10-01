@@ -648,11 +648,9 @@
 			params.append("guests",    attending.value === "Yes" ? guests : "0");
 			params.append("message",   message);
 
-			fetch(SCRIPT_URL, {
-				method: "POST",
-				mode:   "no-cors",
-				headers: { "Content-Type": "application/x-www-form-urlencoded" },
-				body:   params.toString()
+			fetch(SCRIPT_URL + "?" + params.toString(), {
+				method: "GET",
+				mode:   "no-cors"
 			})
 			.then(function () {
 				// no-cors returns opaque response — assume success
