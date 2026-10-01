@@ -2458,36 +2458,39 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 6px auto 22px auto;
+  margin: 10px auto 22px auto;
   width: 100%;
 }
 .event-info-list {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  gap: 16px;
-  text-align: left;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
   margin: 0 auto;
-  width: auto;
-  max-width: 100%;
+  width: 100%;
 }
 .event-info-item {
   display: flex;
-  align-items: flex-start;
-  gap: 14px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 .event-icon-circle {
-  width: 38px;
-  height: 38px;
-  min-width: 38px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
   border-radius: 50%;
   background: rgba(185, 109, 125, 0.1);
   color: #B96D7D;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 19px;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin: 0 auto 7px auto;
   transition: all 0.25s ease;
 }
 .event-card-modern:hover .event-icon-circle {
@@ -2497,21 +2500,26 @@ html {
 .event-info-text {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 .event-info-main {
   font-size: 20px;
   font-weight: 700;
   color: #222;
   line-height: 1.25;
+  text-align: center;
   display: block;
 }
 .event-info-sub {
   font-size: 13.5px;
   color: #666;
   line-height: 1.35;
+  text-align: center;
   display: block;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 .event-venue-box {
   margin-top: auto;
@@ -3422,18 +3430,42 @@ html {
     margin: 6px auto 20px auto !important;
   }
   #fh5co-event .event-info-list {
-    width: auto !important;
+    width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto !important;
-    display: inline-flex !important;
+    display: flex !important;
     flex-direction: column !important;
-    gap: 14px !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+  }
+  #fh5co-event .event-info-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  #fh5co-event .event-icon-circle {
+    margin: 0 auto 6px auto !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    font-size: 18px !important;
+  }
+  #fh5co-event .event-info-text {
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
   }
   #fh5co-event .event-info-main {
     font-size: 18px !important;
+    text-align: center !important;
   }
   #fh5co-event .event-info-sub {
     font-size: 13px !important;
+    text-align: center !important;
   }
   .gototop {
     bottom: 12px !important;
