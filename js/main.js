@@ -208,9 +208,14 @@
 		}
 	};
 
-	// Parallax
+	// Parallax (desktop only — mobile screens keep backgrounds cleanly centered)
 	var parallax = function() {
-		$(window).stellar();
+		if ($(window).width() > 768) {
+			$(window).stellar({
+				horizontalScrolling: false,
+				responsive: true
+			});
+		}
 	};
 
 	
