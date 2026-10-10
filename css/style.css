@@ -2446,7 +2446,7 @@ form label {
    ========================================================== */
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* Section scroll offset to account for fixed/sticky navbar */

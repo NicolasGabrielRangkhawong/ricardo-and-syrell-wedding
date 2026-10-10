@@ -48,6 +48,22 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+	<!-- Scroll Position & History Management: Always Start at Page Top on Mobile & Desktop -->
+	<script>
+		// 1. Disable mobile browser automatic scroll restoration (prevents jumping back to previously visited RSVP section)
+		if ('scrollRestoration' in history) {
+			history.scrollRestoration = 'manual';
+		}
+		// 2. Strip any lingering hash (#fh5co-started) from the URL bar on load without reloading
+		if (window.location.hash) {
+			if (window.history && window.history.replaceState) {
+				window.history.replaceState(null, document.title, window.location.pathname + window.location.search);
+			}
+		}
+		// 3. Immediately reset viewport position to the very top (0, 0)
+		window.scrollTo(0, 0);
+	</script>
+
 	</head>
 	<body>
 		
@@ -1152,7 +1168,7 @@
 				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
 					<div class="rsvp-card-wrapper">
 						<!-- Hidden iframe for reliable submission -->
-						<iframe name="rsvp_hidden_iframe" id="rsvp_hidden_iframe" style="display:none;"></iframe>
+						<iframe name="rsvp_hidden_iframe" id="rsvp_hidden_iframe" style="display:none; width:0; height:0; border:0;" tabindex="-1" aria-hidden="true"></iframe>
 
 						<form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbwhqXnXOsaNYGAAHriTHxDdn8m4swxMB1NV5cIE7rnq7wBN_7QQs7ElQ8KIiXB3q9Yz/exec" method="GET" target="rsvp_hidden_iframe">
 
@@ -1444,10 +1460,43 @@
 			}
 		});
 
-		// Close mobile offcanvas nav when any menu item is tapped
-		$(document).on('click', '#fh5co-offcanvas a', function () {
-			$('body').removeClass('offcanvas');
-			$('.js-fh5co-nav-toggle').removeClass('active');
+		// Universal Smooth Scrolling for all internal anchor links (prevents URL hash pollution & auto-jumps on reload)
+		$(document).on('click', 'a[href^="#"]', function (e) {
+			var href = this.getAttribute('href');
+			if (!href || href === '#' || href === '#!') return;
+
+			var $target = $(href);
+			if ($target.length) {
+				e.preventDefault();
+
+				// Close mobile nav menu if open
+				if ($('body').hasClass('offcanvas')) {
+					$('body').removeClass('offcanvas overflow');
+					$('.js-fh5co-nav-toggle').removeClass('active');
+				}
+
+				var targetOffset = $target.offset().top;
+				var finalOffset = Math.max(0, targetOffset - (href === '#fh5co-header' ? 0 : 25));
+
+				$('html, body').stop().animate({
+					scrollTop: finalOffset
+				}, 650, 'easeInOutExpo');
+			}
+		});
+
+		// Lock viewport at top upon document ready and window load
+		window.scrollTo(0, 0);
+		if (document.activeElement && document.activeElement !== document.body) {
+			document.activeElement.blur();
+		}
+		$(window).on('load', function () {
+			window.scrollTo(0, 0);
+			setTimeout(function () {
+				window.scrollTo(0, 0);
+			}, 50);
+			setTimeout(function () {
+				window.scrollTo(0, 0);
+			}, 250);
 		});
 
 		// 4. ENTOURAGE TAB SWITCHER (2-PAGE VIEW)
