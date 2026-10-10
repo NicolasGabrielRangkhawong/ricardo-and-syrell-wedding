@@ -2565,6 +2565,9 @@ html {
   padding: 4px 14px;
   border-radius: 20px;
 }
+.couple-half p strong {
+  color: #382A25;
+}
 
 /* Streamlined Event Cards (Date, Time, Venue Focused) */
 /* Streamlined Event Cards (Date, Time, Venue Focused) */
@@ -2989,10 +2992,10 @@ html {
 .entourage-pair {
   margin-bottom: 8px;
   font-size: 15px;
-  color: #444;
+  color: #382A25;
 }
 .entourage-pair strong {
-  color: #111;
+  color: #382A25;
   font-weight: 600;
 }
 
