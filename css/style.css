@@ -1259,6 +1259,7 @@ form label {
 #fh5co-testimonial,
 #fh5co-services,
 #fh5co-started,
+#fh5co-rsvp,
 #fh5co-footer,
 #fh5co-event,
 #fh5co-couple-story,
@@ -1272,6 +1273,7 @@ form label {
   #fh5co-testimonial,
   #fh5co-services,
   #fh5co-started,
+  #fh5co-rsvp,
   #fh5co-footer,
   #fh5co-event,
   #fh5co-couple-story,
@@ -1620,11 +1622,13 @@ form label {
   margin-bottom: 10px;
 }
 
-#fh5co-started {
+#fh5co-started,
+#fh5co-rsvp {
   position: relative;
   z-index: 1;
 }
-#fh5co-started .overlay {
+#fh5co-started .overlay,
+#fh5co-rsvp .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -1634,18 +1638,22 @@ form label {
   pointer-events: none !important;
   z-index: 1;
 }
-#fh5co-started > .container {
+#fh5co-started > .container,
+#fh5co-rsvp > .container {
   position: relative;
   z-index: 10;
   pointer-events: auto;
 }
-#fh5co-started .fh5co-heading h2 {
+#fh5co-started .fh5co-heading h2,
+#fh5co-rsvp .fh5co-heading h2 {
   color: #fff;
 }
-#fh5co-started .fh5co-heading p {
+#fh5co-started .fh5co-heading p,
+#fh5co-rsvp .fh5co-heading p {
   color: rgba(255, 255, 255, 0.5);
 }
-#fh5co-started .form-control {
+#fh5co-started .form-control,
+#fh5co-rsvp .form-control {
   background: rgba(255, 255, 255, 0.2);
   border: none !important;
   color: #fff;
@@ -1655,24 +1663,30 @@ form label {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-#fh5co-started .form-control::-webkit-input-placeholder {
+#fh5co-started .form-control::-webkit-input-placeholder,
+#fh5co-rsvp .form-control::-webkit-input-placeholder {
   color: #fff;
 }
-#fh5co-started .form-control:-moz-placeholder {
+#fh5co-started .form-control:-moz-placeholder,
+#fh5co-rsvp .form-control:-moz-placeholder {
   /* Firefox 18- */
   color: #fff;
 }
-#fh5co-started .form-control::-moz-placeholder {
+#fh5co-started .form-control::-moz-placeholder,
+#fh5co-rsvp .form-control::-moz-placeholder {
   /* Firefox 19+ */
   color: #fff;
 }
-#fh5co-started .form-control:-ms-input-placeholder {
+#fh5co-started .form-control:-ms-input-placeholder,
+#fh5co-rsvp .form-control:-ms-input-placeholder {
   color: #fff;
 }
-#fh5co-started .form-control:focus {
+#fh5co-started .form-control:focus,
+#fh5co-rsvp .form-control:focus {
   background: rgba(255, 255, 255, 0.3);
 }
-#fh5co-started .btn {
+#fh5co-started .btn,
+#fh5co-rsvp .btn {
   height: 54px;
   border: none !important;
   background: #B96D7D;
@@ -1683,17 +1697,21 @@ form label {
   padding-left: 50px;
   padding-right: 50px;
 }
-#fh5co-started .form-inline .form-group {
+#fh5co-started .form-inline .form-group,
+#fh5co-rsvp .form-inline .form-group {
   width: 100% !important;
   margin-bottom: 10px;
 }
-#fh5co-started .form-inline .form-group .form-control {
+#fh5co-started .form-inline .form-group .form-control,
+#fh5co-rsvp .form-inline .form-group .form-control {
   width: 100%;
 }
-#fh5co-started .fh5co-heading {
+#fh5co-started .fh5co-heading,
+#fh5co-rsvp .fh5co-heading {
   margin-bottom: 30px;
 }
-#fh5co-started .fh5co-heading h2 {
+#fh5co-started .fh5co-heading h2,
+#fh5co-rsvp .fh5co-heading h2 {
   margin-bottom: 0;
 }
 
@@ -2183,6 +2201,7 @@ form label {
   .fh5co-cover,
   .fh5co-bg,
   #fh5co-started,
+  #fh5co-rsvp,
   #fh5co-event,
   #fh5co-counter {
     background-position: center center !important;
@@ -2358,7 +2377,8 @@ form label {
   pointer-events: auto !important;
 }
 
-#fh5co-started .form-control {
+#fh5co-started .form-control,
+#fh5co-rsvp .form-control {
   background: rgba(255, 255, 255, 0.18) !important;
   border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
   border-radius: 8px !important;
@@ -2373,7 +2393,8 @@ form label {
   z-index: 25;
 }
 
-#fh5co-started .form-control:focus {
+#fh5co-started .form-control:focus,
+#fh5co-rsvp .form-control:focus {
   background: rgba(255, 255, 255, 0.28) !important;
   border-color: #B96D7D !important;
   box-shadow: 0 0 10px rgba(185, 109, 125, 0.5) !important;
@@ -2416,7 +2437,8 @@ form label {
 }
 
 @media screen and (max-width: 768px) {
-  #fh5co-started {
+  #fh5co-started,
+  #fh5co-rsvp {
     padding: 4.5em 0 !important;
   }
   .rsvp-card-wrapper {
@@ -3635,7 +3657,8 @@ html {
   z-index: 2;
 }
 
-#fh5co-started {
+#fh5co-started,
+#fh5co-rsvp {
   padding: 5.5em 0 !important;
   position: relative;
   z-index: 2;

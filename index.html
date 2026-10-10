@@ -14,9 +14,10 @@
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content="Ric &amp; Sy Wedding"/>
 	<meta property="og:image" content="images/invitation-main.jpg"/>
-	<meta property="og:url" content=""/>
+	<meta property="og:url" content="https://NicolasGabrielRangkhawong.github.io/ricardo-and-syrell-wedding/"/>
 	<meta property="og:site_name" content="Ric &amp; Sy Wedding"/>
 	<meta property="og:description" content="We're getting married! Join us on November 28, 2026 to celebrate our special day."/>
+	<link rel="canonical" href="https://NicolasGabrielRangkhawong.github.io/ricardo-and-syrell-wedding/"/>
 
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
@@ -48,20 +49,27 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
-	<!-- Scroll Position & History Management: Always Start at Page Top on Mobile & Desktop -->
+	<!-- Scroll Position & History Management: Always Start at Page Top on Mobile & In-App Browsers -->
 	<script>
-		// 1. Disable mobile browser automatic scroll restoration (prevents jumping back to previously visited RSVP section)
+		// 1. Disable mobile browser automatic scroll restoration
 		if ('scrollRestoration' in history) {
 			history.scrollRestoration = 'manual';
 		}
-		// 2. Strip any lingering hash (#fh5co-started) from the URL bar on load without reloading
+		// 2. Strip any lingering hash (#fh5co-started, #fh5co-rsvp) from the URL bar on load without reloading
 		if (window.location.hash) {
 			if (window.history && window.history.replaceState) {
 				window.history.replaceState(null, document.title, window.location.pathname + window.location.search);
 			}
 		}
-		// 3. Immediately reset viewport position to the very top (0, 0)
+		// 3. Immediately lock viewport position to the very top (0, 0) across all early rendering ticks
 		window.scrollTo(0, 0);
+		[0, 10, 30, 60, 100, 200, 350, 600, 1000].forEach(function(ms) {
+			setTimeout(function() {
+				window.scrollTo(0, 0);
+				if (document.documentElement) document.documentElement.scrollTop = 0;
+				if (document.body) document.body.scrollTop = 0;
+			}, ms);
+		});
 	</script>
 
 	</head>
@@ -87,7 +95,7 @@
 						<li><a href="#fh5co-entourage">Entourage</a></li>
 						<li><a href="#fh5co-attire">Attire</a></li>
 						<li><a href="#fh5co-gift-notes">Gift &amp; Notes</a></li>
-						<li><a href="#fh5co-started" class="nav-rsvp-btn">RSVP</a></li>
+						<li><a href="#fh5co-rsvp" class="nav-rsvp-btn">RSVP</a></li>
 					</ul>
 				</div>
 			</div>
@@ -111,7 +119,7 @@
 							</h2>
 							<div class="simply-countdown simply-countdown-one"></div>
 							<p class="hero-actions-row">
-								<a href="#fh5co-started" class="btn hero-btn-rsvp">RSVP Now 💌</a>
+								<a href="#fh5co-rsvp" class="btn hero-btn-rsvp">RSVP Now 💌</a>
 								<a href="#fh5co-event" class="btn hero-btn-events">Wedding Details</a>
 							</p>
 						</div>
@@ -1155,7 +1163,7 @@
 	</div>
 
 	<!-- SECTION 7: STREAMLINED RSVP (FULL NAME, CONTACT NUMBER, YES/NO ATTENDANCE) -->
-	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
+	<div id="fh5co-rsvp" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row animate-box">
@@ -1170,18 +1178,18 @@
 						<!-- Hidden iframe for reliable submission -->
 						<iframe name="rsvp_hidden_iframe" id="rsvp_hidden_iframe" style="display:none; width:0; height:0; border:0;" tabindex="-1" aria-hidden="true"></iframe>
 
-						<form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbwhqXnXOsaNYGAAHriTHxDdn8m4swxMB1NV5cIE7rnq7wBN_7QQs7ElQ8KIiXB3q9Yz/exec" method="GET" target="rsvp_hidden_iframe">
+						<form id="rsvp-form" autocomplete="off" action="https://script.google.com/macros/s/AKfycbwhqXnXOsaNYGAAHriTHxDdn8m4swxMB1NV5cIE7rnq7wBN_7QQs7ElQ8KIiXB3q9Yz/exec" method="GET" target="rsvp_hidden_iframe">
 
 							<!-- Full Name -->
 							<div class="form-group" style="margin-bottom:18px;">
 								<label for="rsvp-name" style="color:#fff; font-weight:600; font-size:15px; display:block; margin-bottom:6px;">Full Name <span style="color:#f4a7b9;">*</span></label>
-								<input type="text" class="form-control" id="rsvp-name" name="name" placeholder="Your full name" required style="height:48px;" autocomplete="name" autocorrect="off">
+								<input type="text" class="form-control" id="rsvp-name" name="name" placeholder="Your full name" required style="height:48px;" autocomplete="off" autocorrect="off">
 							</div>
 
 							<!-- Contact Number (Replaces Email) -->
 							<div class="form-group" style="margin-bottom:18px;">
 								<label for="rsvp-contact" style="color:#fff; font-weight:600; font-size:15px; display:block; margin-bottom:6px;">Contact Number <span style="color:#f4a7b9;">*</span></label>
-								<input type="tel" class="form-control" id="rsvp-contact" name="contact" placeholder="e.g. 0917 123 4567" required style="height:48px;" autocomplete="tel" inputmode="tel">
+								<input type="tel" class="form-control" id="rsvp-contact" name="contact" placeholder="e.g. 0917 123 4567" required style="height:48px;" autocomplete="off" inputmode="tel">
 								<!-- Mirrored email field so older backend versions continue saving seamlessly -->
 								<input type="hidden" id="rsvp-email-mirror" name="email">
 							</div>
@@ -1491,12 +1499,15 @@
 		}
 		$(window).on('load', function () {
 			window.scrollTo(0, 0);
-			setTimeout(function () {
-				window.scrollTo(0, 0);
-			}, 50);
-			setTimeout(function () {
-				window.scrollTo(0, 0);
-			}, 250);
+			var formInputs = document.querySelectorAll('#rsvp-form input, #rsvp-form textarea, #rsvp-form button');
+			formInputs.forEach(function (el) { el.blur(); });
+			[0, 50, 150, 300, 600, 1000].forEach(function (t) {
+				setTimeout(function () {
+					window.scrollTo(0, 0);
+					if (document.documentElement) document.documentElement.scrollTop = 0;
+					if (document.body) document.body.scrollTop = 0;
+				}, t);
+			});
 		});
 
 		// 4. ENTOURAGE TAB SWITCHER (2-PAGE VIEW)
